@@ -1,8 +1,8 @@
+server:
+  port: 8050
 spring:
   data:
     mongodb:
       database: bootcamp
       host: localhost
       port: 27017
-server:
-  port: 8050
