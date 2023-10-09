@@ -14,3 +14,14 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://root:s3cr3t@localhost:8761/eureka 
+resilience4j:
+  circuitbreaker:
+    instances:
+      accounts:
+        registerHealthIndicator: true # Para registrar un indicador de salud en Spring Boot Actuator
+        slidingWindowType: COUNT_BASED # Tipo de ventana deslizante
+        slidingWindowSize: 5 # Tamaño de la ventana deslizante
+        minimumNumberOfCalls: 5 # Número mínimo de llamadas para considerar la apertura del circuit breaker
+        permittedNumberOfCallsInHalfOpenState: 3 # Número de llamadas permitidas en estado semiapertura
+        failureRateThreshold: 50 # Umbral de tasa de falla en porcentaje
+        waitDurationInOpenState: 60s # Duración de espera en estado abierto
