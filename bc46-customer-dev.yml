@@ -34,5 +34,5 @@ resilience4j:
         failureRateThreshold: 50
         eventConsumerBufferSize: 10
   instances:
-    accounts:
+    accountsCustomer:
       base-config: default
