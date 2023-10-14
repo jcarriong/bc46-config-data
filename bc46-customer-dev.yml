@@ -29,7 +29,7 @@ resilience4j:
         minimumNumberOfCalls: 5
         permittedNumberOfCallsInHalfOpenState: 3
         waitDurationInOpenState: 30s
-        failureRateThreshold: 50
+        failureRateThreshold: 100
         eventConsumerBufferSize: 10
     instances:
       myCircuitBreaker: # Nombre de tu CircuitBreaker personalizado
